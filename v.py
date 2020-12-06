@@ -59,8 +59,6 @@ def aparecerL():
 contador = 0
 for turma in range(40, 100):
     codigo = ''.join(random.choice(letras) for _ in range(4))
-
-
 while True:
     # função fill define a cor de fundo da tela
       tela.blit(fundo, (0, 0))
@@ -91,7 +89,7 @@ while True:
             letraVelocidade = letraVelocidade + 1
             if letraVelocidade >= 10:
                   letraVelocidade = 8
-            letraPosicaoX = random.randrange(0, largura - 100)
+                  letraPosicaoX = random.randrange(0, largura - 100)
             letra = random.choice(letras)
       letraPosicaoY = letraPosicaoY + letraVelocidade
       aparecerL()
@@ -105,8 +103,10 @@ while True:
             if cestaPosicaoX < letraPosicaoX and cestaPosicaoX + cestaLargura > letraPosicaoX or letraPosicaoX+larguraLetra > cestaPosicaoX and letraPosicaoX+larguraLetra < cestaPosicaoX+cestaLargura:
                   letraPosicaoY = 10 - alturaLetra
                   letraVelocidade = letraVelocidade + 1
-                  aparecerL()
                   letraPosicaoX = random.randrange(50,750)
                   contador += 1
+                  letra = random.choice(letras)
+      letraPosicaoY = letraPosicaoY + letraVelocidade
+      aparecerL()
       pygame.display.update()
       relogio.tick(60)

@@ -6,7 +6,6 @@ import pygame
 
 def limparTela():
     os.system("cls")
-
 def registro(nome,email):
     arquivo = open("file.txt","a")
     arquivo.write(" Nome: ")
@@ -15,3 +14,4 @@ def registro(nome,email):
     arquivo.write(email)
     arquivo.write("\n")
     arquivo.close()
+    
