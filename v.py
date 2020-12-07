@@ -12,7 +12,7 @@ registro(nome, email)
 limparTela()
 pygame.init()
 relogio = pygame.time.Clock()
-pygame.display.set_caption("Coletando as letrasç")
+pygame.display.set_caption("Caça - Letras")
 largura = 1080
 altura = 600
 alturaLetra = 150
@@ -102,7 +102,10 @@ while True:
       if cestaPosicaoY < letraPosicaoY + alturaLetra:
             if cestaPosicaoX < letraPosicaoX and cestaPosicaoX + cestaLargura > letraPosicaoX or letraPosicaoX+larguraLetra > cestaPosicaoX and letraPosicaoX+larguraLetra < cestaPosicaoX+cestaLargura:
                   letraPosicaoY = 10 - alturaLetra
-                  letraVelocidade = letraVelocidade + 1
+                  letraVelocidade = letraVelocidade + 0.50
+                  if letraVelocidade >= 10:
+                        letraVelocidade = 8
+                        letraPosicaoX = random.randrange(0, largura - 100)
                   letraPosicaoX = random.randrange(50,750)
                   contador += 1
                   letra = random.choice(letras)
